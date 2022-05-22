@@ -1,0 +1,34 @@
+{
+  "navbar": {
+    "home": "Trang chủ",
+    "about": "Giới thiệu",
+    "services": "Dịch vụ",
+    "contact": "Liên hệ"
+  },
+  "button": {
+    "explore": "KHÁM PHÁ NGAY"
+  },
+  "home": {
+    "text": "Trước đây, quần đảo Côn Đảo được mệnh danh là “địa ngục trần gian”. Giờ đây, với cảnh quan thiên nhiên tươi đẹp, nó đã trở thành một “hòn ngọc Biển Đông” tuyệt đẹp thu hút khách du lịch trong và ngoài nước."
+  },
+  "about": {
+    "title": "Đôi nét Côn Đảo",
+    "desc": "Côn Đảo là một huyện trực thuộc tỉnh Bà Rịa - Vũng Tàu",
+    "naturalTitle": "Thiên nhiên Côn Đảo",
+    "naturalDesc": "Một khi đã bước chân đến với Côn Đảo thì du khách đừng nên bỏ qua một số địa điểm như Hòn Bà, Vịnh Đầm Tre, bãi Ông Đụng, Hòn Tài… để thưởng thức cảnh quan thiên nhiên đa dạng, sinh động khi có sự kết hợp hài hòa giữa núi rừng và biển xanh.",
+    "placeTitle": "Những địa điểm không nên bỏ qua",
+    "historyTitle": "Di tích lịch sử",
+    "historyDesc": "Côn Đảo - vùng đất của đau thương, là nơi nằm xuống của rất nhiều chiến sĩ cách mạng cũng như người dân nơi đây. Vì vậy Côn Đảo sở hữu rất nhiều di tích lịch sử nổi tiếng.",
+    "specialtiesTitle": "Đặc sản Côn Đảo",
+    "specilitiesDesc": "Các bạn đã tìm được những món ngon Côn Đảo khi ghé thăm địa điểm nổi tiếng này chưa? Đây chắc hẳn cũng là một băn khoăn của rất nhiều bạn trẻ khi tham quan các địa điểm du lịch tại Côn Đảo. VivuCondao sẽ giới thiệu đến bạn top những món quà đặc sản Côn Đảo rất đáng để thử một lần vì độ ngon khó cưỡng."
+  },
+  "service": {
+    "title": "Bạn đã đặt vé để đến với Côn Đảo chưa?",
+    "desc": "Để đi đến Côn Đảo bạn có thể di chuyển bằng máy bay hoặc tàu thủy",
+    "plane": "Đặt vé máy bay",
+    "boat": "Đặt vé tàu",
+    "hotel": "Đặt phòng khách sạn",
+    "tour": "Đặt tour",
+    "bike": "Thuê xe"
+  }
+}

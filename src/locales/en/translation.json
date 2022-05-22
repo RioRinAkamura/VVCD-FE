@@ -1,0 +1,35 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "contact": "Contact"
+  },
+  "button": {
+    "explore": "EXPLORE"
+  },
+  "home": {
+    "text": "In the past, Con Dao Archipelago was known as “hell on earth”. Now, with a beautiful natural landscape, it has become a stunning “pearl” that attracts domesticand foreign tourists"
+  },
+  "about": {
+    "title": "Some features of Con Dao",
+    "desc": "Con Dao is a district directly under Ba Ria - Vung Tau province",
+    "naturalTitle": "Con Dao Nature",
+    "naturalDesc": "Once you have stepped foot in Con Dao, visitors should not miss some places such as Hon Ba, Dam Tre Bay, Ong Dung beach, Hon Tai... to enjoy the diverse and lively natural landscape when there is a natural landscape. Harmonious combination of mountains and forests and blue sea.",
+    "placeTitle": "Places not to be missed",
+    "historyTitle": "Historical sites",
+    "historyDesc": "Con Dao - the land of pain and suffering, is the place where many revolutionary soldiers as well as people lay down. Therefore, Con Dao possesses many famous historical sites.",
+    "specialtiesTitle": "Con Dao specialties",
+    "specilitiesDesc": "Have you found the delicious dishes of Con Dao when visiting this famous place? This must be a concern of many young people when visiting tourist attractions in Con Dao. VivuCondao will introduce to you the top gifts of Con Dao specialties that are worth trying once because of their irresistible deliciousness.",
+    "foodTitle": "Top dishes to try when coming to Con Dao"
+  },
+  "service": {
+    "title": "Have you booked your tickets to Con Dao yet?",
+    "desc": "To go to Con Dao, you can travel by plane or boat",
+    "plane": "Ticket booking",
+    "boat": "Book boat tickets",
+    "hotel": "Book hotel room",
+    "tour": "Book tour",
+    "bike": "Car,bike rental"
+  }
+}
