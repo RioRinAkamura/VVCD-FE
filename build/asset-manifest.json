@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/vivucd/static/css/main.1ea69e2f.css",
+    "main.js": "/vivucd/static/js/main.d02f0297.js",
+    "static/js/787.f1fa3a03.chunk.js": "/vivucd/static/js/787.f1fa3a03.chunk.js",
+    "static/media/slide3.png": "/vivucd/static/media/slide3.9caf2831a6a144c2ec74.png",
+    "static/media/slide2.png": "/vivucd/static/media/slide2.aa32b6f64c57cfed1919.png",
+    "static/media/slide1.png": "/vivucd/static/media/slide1.dbae3bacd5ff248dd784.png",
+    "static/media/turtle.jpg": "/vivucd/static/media/turtle.37a9cf9aeb35a8f5b5da.jpg",
+    "static/media/bg-hero.jpg": "/vivucd/static/media/bg-hero.c712316b9058d2cce5c1.jpg",
+    "static/media/bg-works.jpg": "/vivucd/static/media/bg-works.0e4837e61cf0a239a4c1.jpg",
+    "static/media/boat.jpg": "/vivucd/static/media/boat.16a2ab88f24583239c4f.jpg",
+    "static/media/ship.jpg": "/vivucd/static/media/ship.144dcbd52d5c8a69a50c.jpg",
+    "static/media/du-lich2.jpg": "/vivucd/static/media/du-lich2.d44f8ebb2715870d150d.jpg",
+    "static/media/seafood.png": "/vivucd/static/media/seafood.1cfc10ad79608a88812a.png",
+    "static/media/du-lich1.jpg": "/vivucd/static/media/du-lich1.f2bff54c795389db3458.jpg",
+    "static/media/airplane.jpg": "/vivucd/static/media/airplane.011c6000814d2a032bff.jpg",
+    "static/media/tuong.png": "/vivucd/static/media/tuong.9ae489e1536e755ab1d3.png",
+    "static/media/logo1.png": "/vivucd/static/media/logo1.b04e72595725d10d7ec0.png",
+    "static/media/slick.svg": "/vivucd/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/vivucd/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/vivucd/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/vivucd/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/vivucd/index.html",
+    "static/media/getFetch.cjs": "/vivucd/static/media/getFetch.c780682470504fffbd04.cjs",
+    "main.1ea69e2f.css.map": "/vivucd/static/css/main.1ea69e2f.css.map",
+    "main.d02f0297.js.map": "/vivucd/static/js/main.d02f0297.js.map",
+    "787.f1fa3a03.chunk.js.map": "/vivucd/static/js/787.f1fa3a03.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1ea69e2f.css",
+    "static/js/main.d02f0297.js"
+  ]
+}
