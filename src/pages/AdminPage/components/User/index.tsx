@@ -1,92 +1,82 @@
-import React from "react";
-import { Table, Tag, Space } from "antd";
+import { DeleteTwoTone, EditTwoTone } from "@ant-design/icons";
+import { Button, Table, Tooltip } from "antd";
+import axios from "axios";
+import React, { useCallback, useEffect, useState } from "react";
 import styled from "styled-components";
+import { apiUrl } from "../../../../contexts/constants";
 
 type Props = {};
 
-const data = [
-  {
-    key: "1",
-    name: "John Brown",
-    age: 32,
-    address: "New York No. 1 Lake Park",
-    tags: ["nice", "developer"],
-  },
-  {
-    key: "2",
-    name: "Jim Green",
-    age: 42,
-    address: "London No. 1 Lake Park",
-    tags: ["loser"],
-  },
-  {
-    key: "3",
-    name: "Joe Black",
-    age: 32,
-    address: "Sidney No. 1 Lake Park",
-    tags: ["cool", "teacher"],
-  },
-];
+const Users = (props: Props) => {
+  const [users, setUsers] = useState([]);
 
-const User = (props: Props) => {
+  const getUsers = useCallback(async () => {
+    const response = await axios.get(`${apiUrl}/users`);
+    if (response) {
+      setUsers(response.data.users);
+    }
+  }, []);
+
+  useEffect(() => {
+    getUsers();
+  }, [getUsers]);
+
   const columns = [
     {
-      title: "Name",
-      dataIndex: "name",
-      key: "name",
-      render: (text: string) => <a>{text}</a>,
+      title: "STT",
+      dataIndex: "key",
+      key: "key",
+      width: 70,
     },
     {
-      title: "Age",
-      dataIndex: "age",
-      key: "age",
-    },
-    {
-      title: "Address",
-      dataIndex: "address",
-      key: "address",
-    },
-    {
-      title: "Tags",
-      key: "tags",
-      dataIndex: "tags",
-      render: (tags: any) => (
-        <>
-          {tags.map((tag: any) => {
-            let color = tag.length > 5 ? "geekblue" : "green";
-            if (tag === "loser") {
-              color = "volcano";
-            }
-            return (
-              <Tag color={color} key={tag}>
-                {tag.toUpperCase()}
-              </Tag>
-            );
-          })}
-        </>
-      ),
+      title: "Username",
+      dataIndex: "username",
+      key: "username",
+
+      render: (text: string) => <span>{text}</span>,
     },
     {
       title: "Action",
       key: "action",
       render: (text: any, record: any) => (
-        <Space size="middle">
-          <a>Invite {record.name}</a>
-          <a>Delete</a>
-        </Space>
+        <>
+          <Tooltip title="Edit">
+            <Button icon={<EditTwoTone twoToneColor="#d46b08" />} />
+          </Tooltip>{" "}
+          &nbsp;
+          <Tooltip title="Delete">
+            <Button icon={<DeleteTwoTone twoToneColor="red" />} />
+          </Tooltip>
+        </>
       ),
     },
   ];
 
   return (
     <>
-      <ContentStyle columns={columns} dataSource={data} />
+      <ContentHeader>
+        <h2 style={{ margin: 0 }}>Users</h2>
+        <Button type="primary">Add new</Button>
+      </ContentHeader>
+      <TableStyle bordered columns={columns} dataSource={users} />
     </>
   );
 };
 
-export default User;
+export default Users;
 
-const ContentStyle = styled(Table)`
-  box-shadow: 0px 9px 20px -20px rgba(0, 0, 0, 0.1);
+const TableStyle = styled(Table)`
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
+  padding: 12px;
+`;
+
+const ContentHeader = styled.div`
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding: 0px 24px;
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
 `;

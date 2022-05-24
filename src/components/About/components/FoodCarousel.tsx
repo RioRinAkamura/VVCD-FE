@@ -1,14 +1,24 @@
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
-import React from "react";
+import axios from "axios";
+import React, { useCallback, useEffect, useState } from "react";
 import Slider from "react-slick";
 import styled from "styled-components";
-import image6 from "../../../assets/images/advanced-option.jpg";
-import hotel from "../../../assets/images/hotel.jpg";
-import ship from "../../../assets/images/ship.jpg";
-import tour from "../../../assets/images/tour.jpg";
-import { foodData } from "./aboutData";
+import { apiUrl } from "../../../contexts/constants";
 
 const FoodCarousel = () => {
+  const [foods, setFoods] = useState([]);
+
+  const getPlaces = useCallback(async () => {
+    const response = await axios.get(`${apiUrl}/foods`);
+    if (response) {
+      setFoods(response.data.foods);
+    }
+  }, []);
+
+  useEffect(() => {
+    getPlaces();
+  }, [getPlaces]);
+
   const NextArrow = (props: any) => {
     const { className, onClick } = props;
     return (
@@ -73,13 +83,15 @@ const FoodCarousel = () => {
       <Wrapper>
         <h2> Những món ngon không thể bỏ lỡ</h2>
         <CarouselWrapper {...settings}>
-          {foodData &&
-            foodData.map((data) => (
-              <CardWrapper key={data.id}>
-                <CardItem style={{ backgroundImage: `url(${data.image})` }}>
+          {foods &&
+            foods.map((food: any) => (
+              <CardWrapper key={food._id}>
+                <CardItem
+                  style={{ backgroundImage: `url(${food.pictures[0]})` }}
+                >
                   <CardContent>
-                    <h3 style={{ color: "white" }}>{data.title}</h3>
-                    <DescText>{data.desc}</DescText>
+                    <h3 style={{ color: "white" }}>{food.title}</h3>
+                    <DescText>{food.description}</DescText>
                   </CardContent>
                 </CardItem>
               </CardWrapper>

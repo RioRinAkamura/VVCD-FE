@@ -51,7 +51,7 @@ export function App() {
         <Route path="/login" element={<Auth authRoute="login" />} />
         <Route path="/register" element={<Auth authRoute="register" />} />
         <Route element={<PrivateRoute />}>
-          <Route path="/admin" element={<AdminPage />}>
+          <Route path="admin" element={<AdminPage />}>
             <Route path="users" element={<User />} />
             <Route path="report" element={<Report />} />
             <Route path="places" element={<Places />} />

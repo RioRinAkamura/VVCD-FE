@@ -82,7 +82,7 @@ export const Dashboard = () => {
         </LogoWrapper>
         <Menu
           theme="dark"
-          defaultSelectedKeys={["1"]}
+          defaultActiveFirst={true}
           mode="inline"
           items={items}
         />

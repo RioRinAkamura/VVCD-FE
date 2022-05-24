@@ -1,11 +1,31 @@
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
-import React from "react";
+import axios from "axios";
+import React, { useCallback, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import styled from "styled-components";
-import { historyData, placeData } from "./aboutData";
+import { apiUrl } from "../../../contexts/constants";
 
 const PlaceCarousel = () => {
+  const [placesHistory, setPlacesHistory] = useState([]);
+  const [placesNatural, setPlacesNatural] = useState([]);
+
+  const getPlaces = useCallback(async () => {
+    const response = await axios.get(`${apiUrl}/places`);
+    if (response) {
+      setPlacesHistory(
+        response.data.places.filter((place: any) => place.type === "HISTORY")
+      );
+      setPlacesNatural(
+        response.data.places.filter((place: any) => place.type === "NATURAL")
+      );
+    }
+  }, []);
+
+  useEffect(() => {
+    getPlaces();
+  }, [getPlaces]);
+
   const NextArrow = (props: any) => {
     const { className, onClick } = props;
     return (
@@ -70,14 +90,16 @@ const PlaceCarousel = () => {
       <Wrapper>
         <h2> Địa điểm tâm linh - Di tích lịch sử</h2>
         <CarouselWrapper {...settings}>
-          {historyData &&
-            historyData.map((data) => (
-              <Link to={`/${data.id}`} key={data.id}>
+          {placesHistory &&
+            placesHistory.map((place: any) => (
+              <Link to={`/${place._id}`} key={place._id}>
                 <CardWrapper>
-                  <CardItem style={{ backgroundImage: `url(${data.image})` }}>
+                  <CardItem
+                    style={{ backgroundImage: `url(${place.pictures[0]})` }}
+                  >
                     <CardContent>
-                      <h3 style={{ color: "white" }}>{data.title}</h3>
-                      <DescText>{data.desc}</DescText>
+                      <h3 style={{ color: "white" }}>{place.title}</h3>
+                      <DescText>{place.description}</DescText>
                     </CardContent>
                   </CardItem>
                 </CardWrapper>
@@ -89,14 +111,16 @@ const PlaceCarousel = () => {
       <Wrapper>
         <h2> Địa điểm tham quan - nghỉ dưỡng</h2>
         <CarouselWrapper {...settings}>
-          {placeData &&
-            placeData.map((data) => (
-              <Link to={`about/${data.id}`} key={data.id}>
+          {placesNatural &&
+            placesNatural.map((data: any) => (
+              <Link to={`about/${data._id}`} key={data._id}>
                 <CardWrapper>
-                  <CardItem style={{ backgroundImage: `url(${data.image})` }}>
+                  <CardItem
+                    style={{ backgroundImage: `url(${data.pictures[0]})` }}
+                  >
                     <CardContent>
                       <h3 style={{ color: "white" }}>{data.title}</h3>
-                      <DescText>{data.desc}</DescText>
+                      <DescText>{data.description}</DescText>
                     </CardContent>
                   </CardItem>
                 </CardWrapper>

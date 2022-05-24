@@ -1,8 +1,9 @@
+import { DeleteTwoTone, EditTwoTone } from "@ant-design/icons";
+import { Button, Table, Tag, Tooltip } from "antd";
+import axios from "axios";
 import React, { useCallback, useEffect, useState } from "react";
-import { Table, Tag, Space, Button } from "antd";
 import styled from "styled-components";
 import { apiUrl } from "../../../../contexts/constants";
-import axios from "axios";
 
 type Props = {};
 
@@ -25,6 +26,7 @@ const Places = (props: Props) => {
       title: "STT",
       dataIndex: "key",
       key: "key",
+      width: 70,
     },
     {
       title: "Title",
@@ -50,23 +52,43 @@ const Places = (props: Props) => {
       title: "Pictures",
       dataIndex: "pictures",
       key: "pictures",
-      width: 300,
-      render: (text: any) => text.map((item: string) => <div>{item}</div>),
+      width: 500,
+      render: (text: any) =>
+        text.map((item: string) => (
+          <img
+            src={item}
+            alt={item}
+            width={150}
+            height={150}
+            style={{ margin: 2 }}
+          />
+        )),
     },
     {
       title: "Type",
-      key: "type",
       dataIndex: "type",
-      render: (text: string) => <Tag>{text}</Tag>,
+      filters: [
+        { text: "NATURAL", value: "NATURAL" },
+        { text: "HISTORY", value: "HISTORY" },
+      ],
+      onFilter: (value: any, record: any) => record.type.includes(value),
+      render: (text: string) => (
+        <Tag color={text === "NATURAL" ? "green" : "geekblue"}>{text}</Tag>
+      ),
     },
     {
       title: "Action",
       key: "action",
       render: (text: any, record: any) => (
-        <Space size="middle">
-          <a>Invite {record.name}</a>
-          <a>Delete</a>
-        </Space>
+        <>
+          <Tooltip title="Edit">
+            <Button icon={<EditTwoTone twoToneColor="#d46b08" />} />
+          </Tooltip>{" "}
+          &nbsp;
+          <Tooltip title="Delete">
+            <Button icon={<DeleteTwoTone twoToneColor="red" />} />
+          </Tooltip>
+        </>
       ),
     },
   ];
@@ -77,7 +99,7 @@ const Places = (props: Props) => {
         <h2 style={{ margin: 0 }}>Places</h2>
         <Button type="primary">Add new</Button>
       </ContentHeader>
-      <TableStyle columns={columns} dataSource={places} />
+      <TableStyle bordered columns={columns} dataSource={places} />
     </>
   );
 };
